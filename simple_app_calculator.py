@@ -29,10 +29,10 @@ class Operator(CalculatorBase):
 while True:
     print("\nOptions: +, -, *, /, ^, %, // or 'q' to quit")
     operate = input("Choose Operator: ").lower()
-
     if operate == 'q':
         print("Exiting Calculator. Goodbye!")
         break
+    #put the input of val1 and val2 here so if i press q it would not need to ask values before exiting
     val1 = input("Enter the first number: ")
     val2 = input("Enter the second number: ")
     if operate in ('+', '-', '*', '/', '^', '%', '//'):
