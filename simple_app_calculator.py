@@ -29,12 +29,12 @@ class Operator(CalculatorBase):
 while True:
     print("\nOptions: +, -, *, /, ^, %, // or 'q' to quit")
     operate = input("Choose Operator: ").lower()
-    val1 = input("Enter the first number: ")
-    val2 = input("Enter the second number: ")
+
     if operate == 'q':
         print("Exiting Calculator. Goodbye!")
         break
-
+    val1 = input("Enter the first number: ")
+    val2 = input("Enter the second number: ")
     if operate in ('+', '-', '*', '/', '^', '%', '//'):
         try:
             num1 = float(val1)
