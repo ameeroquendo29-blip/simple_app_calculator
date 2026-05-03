@@ -38,4 +38,10 @@ while True:
         try:
             num1 = float(input("Enter first number: "))
             num2 = float(input("Enter second number: "))
-            
+            calc = Operator(num1, num2, operate)
+            result = calc.operations()
+            print(f"Result: {num1} {operate} {num2} = {result}")
+        except ValueError:
+            print("Error: Please enter a number")
+    else:
+        print("Error: Unknown Operation")
