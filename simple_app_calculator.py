@@ -8,16 +8,18 @@ class Operator(CalculatorBase):
     def __init__(self, num1, num2, operator):
         super().__init__(num1, num2) #super() = parent class
         self.operator = operator
-
-print("Select Operation")
-print("1. + ")
-print("2. - ")
-print("3. * ")
-print("4. / ")
-print("5. % ")
-print("6. ** ")
-print("7. reciprocal")
-print("8. root")
-choice = int(input("Enter your choice: "))
-num1 = int(input("Enter the first number: "))
-num2 = int(input("Enter the second number: "))
+    def operations(self):
+        if self.operation == '+':
+            return self.num1 + self.num2
+        elif self.operation == '-':
+            return self.num1 - self.num2
+        elif self.operation == '*':
+            return self.num1 * self.num2
+        elif self.operation == '/':
+            return self.num1 / self.num2 if self.num2 != 0 else "Error: Division by zero"
+        elif self.operation == '^':
+            return self.num1 ** self.num2
+        elif self.operation == '%':
+            return self.num1 % self.num2 if self.num2 != 0 else "Error: Division by zero"
+        else:
+            return "Invalid Operation"
