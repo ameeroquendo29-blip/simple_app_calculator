@@ -9,19 +9,19 @@ class Operator(CalculatorBase):
         super().__init__(num1, num2) #super() = parent class
         self.operator = operator
     def operations(self):
-        if self.operation == '+':
+        if self.operations == '+':
             return self.num1 + self.num2
-        elif self.operation == '-':
+        elif self.operations == '-':
             return self.num1 - self.num2
-        elif self.operation == '*':
+        elif self.operations == '*':
             return self.num1 * self.num2
-        elif self.operation == '/':
+        elif self.operations == '/':
             return self.num1 / self.num2 if self.num2 != 0 else "Error: Division by zero"
-        elif self.operation == '^':
+        elif self.operations == '^':
             return self.num1 ** self.num2
-        elif self.operation == '%':
+        elif self.operations == '%':
             return self.num1 % self.num2 if self.num2 != 0 else "Error: Division by zero"
-        elif self.operation == '//':
+        elif self.operations == '//':
             return self.num1 // self.num2 if self.num2 != 0 else "Error: Division by zero"
         else:
             return "Invalid Operation"
