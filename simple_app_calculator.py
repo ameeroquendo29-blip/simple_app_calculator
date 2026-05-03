@@ -7,21 +7,21 @@ class CalculatorBase:
 class Operator(CalculatorBase):
     def __init__(self, num1, num2, operator):
         super().__init__(num1, num2) #super() = parent class
-        self.operator = operator
+        self.operator = operator.strip()
     def operations(self):
-        if self.operations == '+':
+        if self.operator == '+':
             return self.num1 + self.num2
-        elif self.operations == '-':
+        elif self.operator == '-':
             return self.num1 - self.num2
-        elif self.operations == '*':
+        elif self.operator == '*':
             return self.num1 * self.num2
-        elif self.operations == '/':
+        elif self.operator == '/':
             return self.num1 / self.num2 if self.num2 != 0 else "Error: Division by zero"
-        elif self.operations == '^':
+        elif self.operator == '^':
             return self.num1 ** self.num2
-        elif self.operations == '%':
+        elif self.operator == '%':
             return self.num1 % self.num2 if self.num2 != 0 else "Error: Division by zero"
-        elif self.operations == '//':
+        elif self.operator == '//':
             return self.num1 // self.num2 if self.num2 != 0 else "Error: Division by zero"
         else:
             return "Invalid Operation"
@@ -29,18 +29,19 @@ class Operator(CalculatorBase):
 while True:
     print("\nOptions: +, -, *, /, ^, %, // or 'q' to quit")
     operate = input("Choose Operator: ").lower()
-
+    val1 = input("Enter the first number: ")
+    val2 = input("Enter the second number: ")
     if operate == 'q':
         print("Exiting Calculator. Goodbye!")
         break
 
     if operate in ('+', '-', '*', '/', '^', '%', '//'):
         try:
-            num1 = float(input("Enter first number: "))
-            num2 = float(input("Enter second number: "))
+            num1 = float(val1)
+            num2 = float(val2)
             calc = Operator(num1, num2, operate)
             result = calc.operations()
-            print(f"Result: {num1} {operate} {num2} = {result}")
+            print(f"\nRESULT: {result}")
         except ValueError:
             print("Error: Please enter a number")
     else:
