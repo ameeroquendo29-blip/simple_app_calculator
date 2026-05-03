@@ -21,5 +21,11 @@ class Operator(CalculatorBase):
             return self.num1 ** self.num2
         elif self.operation == '%':
             return self.num1 % self.num2 if self.num2 != 0 else "Error: Division by zero"
+        elif self.operation == '//':
+            return self.num1 // self.num2 if self.num2 != 0 else "Error: Division by zero"
         else:
             return "Invalid Operation"
+#we will create loop for the calculator
+while True:
+    print("\nOptions: +, -, *, /, ^, %, // or 'q' to quit")
+    operate = input("Choose Operator: ").lower()
